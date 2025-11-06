@@ -1,5 +1,15 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {
+  Cursor,
+  CursorContainer,
+  CursorFollow,
+  CursorProvider,
+} from "@/components/animate-ui/primitives/animate/cursor";
+import { ThemeProvider } from "@/components/providers/themeProvider";
+import ToggleTheme from "@/components/toggleTheme";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +32,20 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ToggleTheme />
+        <CursorProvider>
+          <CursorContainer>
+            <CursorFollow className="bg-foreground/20 backdrop-blur-sm border border-foreground/40 w-8 h-8 md:w-12 md:h-12" />
+            {/* <Cursor className="bg-foreground w-3 h-3 md:w-4 md:h-4" /> */}
+          </CursorContainer>
+        </CursorProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SidebarProvider>
+            <AppSidebar />
+            <SidebarTrigger />
+            {children}
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
