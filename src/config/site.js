@@ -3,7 +3,7 @@ export const siteConfig = {
   name: "DashFlow",
   description: "A modern, scalable dashboard template built with Next.js and shadcn/ui",
   url: "https://dashflow.example.com",
-  author: "Your Name",
+  author: "Codyasbin",
   logo: "/logo.svg",
   
   // Navigation items - Add/remove as needed

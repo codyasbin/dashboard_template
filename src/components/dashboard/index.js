@@ -3,3 +3,4 @@ export { PageHeader, PageContent, PageContainer, Section, Grid } from "./page-la
 export { StatsCard, StatsCardSkeleton, MiniStatsCard } from "./stats-card"
 export { RevenueChart, SalesByCategoryChart, WeeklyActivityChart, TrafficChart } from "./charts"
 export { RecentSales, TopProducts, ActivityFeed, QuickActions } from "./widgets"
+export { DashboardHeader } from "./header"

@@ -179,8 +179,8 @@ export function AppSidebar() {
               </Avatar>
               {!isCollapsed && (
                 <div className="flex flex-col items-start text-left">
-                  <span className="text-sm font-medium">John Doe</span>
-                  <span className="text-xs text-muted-foreground">john@example.com</span>
+                  <span className="text-sm font-medium">Codyasbin</span>
+                  <span className="text-xs text-muted-foreground">codyasbin@example.com</span>
                 </div>
               )}
             </SidebarMenuButton>

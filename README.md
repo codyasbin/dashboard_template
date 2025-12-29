@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DashFlow - Modern Dashboard Template
 
-## Getting Started
+A beautiful, scalable, and production-ready dashboard template built with **Next.js 15**, **Tailwind CSS 4**, and **shadcn/ui** components.
 
-First, run the development server:
+## ✨ Features
+
+- 🎨 **Beautiful UI** - Modern, clean design with attention to detail
+- 🌙 **Dark Mode** - Full dark/light theme support with system preference detection
+- 📱 **Fully Responsive** - Works perfectly on desktop, tablet, and mobile
+- 🧱 **Component-Based** - Reusable components for rapid development
+- 📊 **Charts & Graphs** - Pre-built chart components using Recharts
+- 🎭 **Easy Theming** - CSS variables for easy color customization
+- 📁 **Organized Structure** - Clean, scalable folder architecture
+- 🔧 **Easy Data Replacement** - Dummy data in separate files for easy swapping
+
+## 🚀 Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Project Structure
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── analytics/          # Analytics page
+│   ├── customers/          # Customers page
+│   ├── orders/             # Orders page
+│   ├── products/           # Products page
+│   ├── settings/           # Settings page
+│   ├── help/               # Help & support page
+│   ├── globals.css         # Global styles & theme
+│   ├── layout.js           # Root layout
+│   └── page.js             # Dashboard home
+│
+├── components/
+│   ├── dashboard/          # Dashboard-specific components
+│   │   ├── charts.jsx      # Chart components
+│   │   ├── header.jsx      # Dashboard header
+│   │   ├── page-layout.jsx # Layout components
+│   │   ├── stats-card.jsx  # Stats card components
+│   │   ├── widgets.jsx     # Widget components
+│   │   └── index.js        # Barrel export
+│   │
+│   ├── ui/                 # Base UI components (shadcn/ui)
+│   │
+│   ├── providers/          # Context providers
+│   └── app-sidebar.jsx     # Sidebar component
+│
+├── config/
+│   └── site.js             # Site configuration
+│
+├── data/                   # Dummy data (replace with your API)
+│   ├── analytics-data.js
+│   ├── customers-data.js
+│   ├── dashboard-data.js
+│   ├── orders-data.js
+│   └── products-data.js
+│
+├── hooks/                  # Custom React hooks
+└── lib/                    # Utility functions
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Customizing the Theme
 
-## Learn More
+All theme colors are defined in `src/app/globals.css` using CSS variables:
 
-To learn more about Next.js, take a look at the following resources:
+```css
+:root {
+  /* Primary - Main brand color */
+  --primary: oklch(0.45 0.2 260);  /* Change the hue (260) for different colors */
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Color Hue Guide:
+- `0` - Red | `30` - Orange | `60` - Yellow | `120` - Green
+- `180` - Cyan | `240` - Blue | `260` - Indigo (default) | `300` - Purple
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📊 Replacing Dummy Data
 
-## Deploy on Vercel
+All dummy data is in `src/data/`. Replace with your API calls while keeping the same data structure.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧩 Available Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Layout: `PageContainer`, `PageHeader`, `Section`, `Grid`
+### Dashboard: `StatsCard`, `RevenueChart`, `SalesByCategoryChart`, `WeeklyActivityChart`, `RecentSales`, `TopProducts`, `ActivityFeed`
+### UI: All shadcn/ui components
+
+## 📦 Tech Stack
+
+- **Next.js 15** - React framework
+- **Tailwind CSS 4** - Utility-first CSS
+- **shadcn/ui** - UI components
+- **Recharts** - Charts
+- **Lucide React** - Icons
+- **next-themes** - Theme management
+
+## 📄 License
+
+MIT License - free for personal or commercial use.
+
+---
+
+Made with ❤️ using Next.js and shadcn/ui by codyasbin
