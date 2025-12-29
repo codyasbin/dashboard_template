@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { Separator } from "@/components/ui/separator"
+import { Breadcrumbs } from "@/components/ui/breadcrumb"
 import ToggleTheme from "@/components/toggleTheme"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
@@ -16,11 +18,15 @@ export function DashboardHeader({ className }) {
       "sticky top-0 z-50 flex h-14 items-center gap-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-6",
       className
     )}>
-      {/* Mobile sidebar trigger */}
-      <SidebarTrigger className="md:hidden" />
+      {/* Sidebar trigger & Breadcrumbs */}
+      <div className="flex items-center gap-2">
+        <SidebarTrigger className="-ml-1" />
+        <Separator orientation="vertical" className="h-4 hidden md:block" />
+        <Breadcrumbs className="hidden md:flex" />
+      </div>
 
       {/* Search */}
-      <div className="flex-1 md:max-w-md">
+      <div className="flex-1 md:max-w-md ml-auto">
         <div className="relative">
           <Search className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
@@ -47,9 +53,9 @@ export function DashboardHeader({ className }) {
 
         {/* User Avatar (mobile only, desktop is in sidebar) */}
         <Avatar className="h-8 w-8 md:hidden">
-          <AvatarImage src="/avatars/user.png" alt="User" />
+          <AvatarImage src="/vercel.svg" alt="User" />
           <AvatarFallback className="bg-primary/10 text-primary text-xs">
-            JD
+            CA
           </AvatarFallback>
         </Avatar>
       </div>

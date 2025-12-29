@@ -87,6 +87,14 @@ const secondaryItems = [
   },
 ]
 
+
+const userDetails={
+  name: "Codyasbin",
+  email: "codyasbin@gmail.com",
+  avatar: "/globe.svg",
+  avatarFallback: "CA"
+}
+
 export function AppSidebar() {
   const pathname = usePathname()
   const { state } = useSidebar()
@@ -172,15 +180,15 @@ export function AppSidebar() {
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Avatar className="h-8 w-8">
-                <AvatarImage src="/avatars/user.png" alt="User" />
-                <AvatarFallback className="bg-primary/10 text-primary text-xs">
-                  JD
+                <AvatarImage src={userDetails.avatar} alt="User" />
+                <AvatarFallback className="bg-black text-primary text-xs">
+            {userDetails.avatarFallback}
                 </AvatarFallback>
               </Avatar>
               {!isCollapsed && (
                 <div className="flex flex-col items-start text-left">
-                  <span className="text-sm font-medium">Codyasbin</span>
-                  <span className="text-xs text-muted-foreground">codyasbin@example.com</span>
+                  <span className="text-sm font-medium">{userDetails.name}</span>
+                  <span className="text-xs text-muted-foreground">{userDetails.email}</span>
                 </div>
               )}
             </SidebarMenuButton>
