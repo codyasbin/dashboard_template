@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ToggleTheme />
+        
         <CursorProvider>
           <CursorContainer>
             <CursorFollow className="bg-foreground/20 backdrop-blur-sm border border-foreground/40 w-8 h-8 md:w-12 md:h-12" />
@@ -40,6 +40,7 @@ export default function RootLayout({ children }) {
           </CursorContainer>
         </CursorProvider>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ToggleTheme />
           <SidebarProvider>
             <AppSidebar />
             <SidebarTrigger />
